@@ -1,6 +1,6 @@
 import { type Request, type Response } from 'express'
 import { HttpError } from '../../errors/http-error'
-import { ApiErrors } from '../../enums/API-errors.enum'
+import { APIErrors } from '../../enums/API-errors.enum'
 
 
 const getPostTestResponse = (req: Request, res: Response): void => {
@@ -8,7 +8,7 @@ const getPostTestResponse = (req: Request, res: Response): void => {
 
     if (requestText === undefined || requestText === null) {
         throw new HttpError(
-            ApiErrors.BAD_REQUEST,
+            APIErrors.BAD_REQUEST,
             400
         )
     }

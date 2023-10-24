@@ -1,11 +1,12 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const swaggerUi = require('swagger-ui-express')
-const swaggerJsdoc = require('swagger-jsdoc')
-const swaggerOptions = require('../swaggerOptions')
-const errorHandler = require('./middleware/error-handler/error-handler')
+import express from 'express'
+import bodyParser from 'body-parser'
+import swaggerUi from 'swagger-ui-express'
+import swaggerJsdoc from 'swagger-jsdoc'
+import swaggerOptions from '../swaggerOptions.json'
 
-const apiRoutes = require('./routes/index')
+import apiRoutes from './routes'
+import { errorHandler } from './middleware/error-handler/error-handler'
+
 
 const app = express()
 // swagger
