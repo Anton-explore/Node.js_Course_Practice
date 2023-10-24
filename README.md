@@ -1,6 +1,27 @@
 # Node.js_Course_Practice
 Practicing in node.js
 
+## Homework 2
+
+### Objective
+Refactor an existing Node.js application created with Express.js and Swagger documentation to use TypeScript.
+
+### Requirements
+1. #### Translating the Project to TypeScript:
+ 1. Create a copy of your existing Node.js project.
+ 2. Translate all server files and configurations to TypeScript.
+ 3. Install necessary packages for TypeScript development (e.g., ts-node, @types/express, etc.).
+2. #### Preserve Functionality:
+ 1. Ensure all previous functionality, including the health-check endpoint and Swagger documentation, remains operational.
+3. #### Typing:
+ 1. Add types to all variables, parameters, and functions in your application, including Express.js routes and Swagger specifications.
+ 2. Use types to ensure safety and provide hints during development.
+4. #### Testing:
+ 1. Verify that your translated application still functions correctly, including the health-check endpoint and Swagger documentation.
+ 2. Use linters and other tools to check for errors.
+
+
+
 ## Homework 1
 
 ### Objective
