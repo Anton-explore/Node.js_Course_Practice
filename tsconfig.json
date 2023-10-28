@@ -3,15 +3,18 @@
     "target": "ES6",
     "outDir": "./dist",
     "rootDir": "./",
+    "lib": ["es6"],
     "module": "CommonJS",
     "strict": true,
     "esModuleInterop": true,
     "declaration": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts",
-    "swaggerOptions.d.ts"
+    "src/@types/swaggerOptions.d.ts"
   ],
   "exclude": [
     "node_modules"

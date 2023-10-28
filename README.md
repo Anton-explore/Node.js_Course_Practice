@@ -1,6 +1,43 @@
 # Node.js_Course_Practice
 Practicing in node.js
 
+## Homework 3
+
+Assignment
+Expanding a Node.js Application with TypeScript and MongoDB Database
+
+Objective
+Extend an existing Node.js application, converted to TypeScript, which uses Express.js, Swagger documentation, and runs via Nodemon. Update its API structure to include "Movies" and "Genres," and implement the ability to search for movies by genre using a MongoDB database.
+
+Requirements
+Connect to MongoDB Database:
+Set up MongoDB on your computer or use a cloud-based MongoDB service.
+Utilize the Mongoose library to establish a connection to the MongoDB database in your application.
+Creating an API for "Movies":
+Create API endpoints for "Movies" with CRUD operations (Create, Read, Update, Delete).
+Each movie should have the following fields:
+Title (String, required field)
+Description (String, required field)
+Release date (Date, required field)
+Genre (Array of Strings, required field)
+Creating an API for "Genres":
+Create API endpoints for "Genres" with CRUD operations (Create, Read, Update, Delete).
+Each genre should have the following field:
+Name (String, required field)
+Searching for Movies by Genre:
+Add a new API endpoint for searching movies by genre (e.g., /movies/genre/:genreName).
+Accept the genre as a request parameter and return a list of movies with the corresponding genre.
+Data Validation and Error Handling:
+Implement data validation for all incoming requests and error handling in your API.
+Ensure appropriate HTTP status codes and error messages.
+Updated Swagger Documentation:
+Expand the Swagger documentation to include the new APIs for "Movies" and "Genres," specifying available operations and providing examples of requests.
+Testing:
+Ensure that your application still functions correctly after updating the API structure, adding the MongoDB database, and enabling movie searches by genre.
+Use Nodemon for development and real-time testing.
+
+
+
 ## Homework 2
 
 ### Objective
