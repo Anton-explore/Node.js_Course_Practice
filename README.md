@@ -1,40 +1,67 @@
 # Node.js_Course_Practice
 Practicing in node.js
 
+## Homework 4
+
+### Assignment
+Testing a Node.js Application with Jest
+
+### Objective
+Write unit tests to cover the functionality of an existing Node.js application, which is written in TypeScript, uses Express.js, and MongoDB, and includes APIs for "Movies" and "Genres." The application should also allow searching for movies by genre. The goal is to ensure that the application functions correctly and reliably.
+
+### Requirements
+1. #### Test Setup:
+ 1. Set up a testing environment using Jest to write and run unit tests.
+ 2. Ensure that your project's dependencies include Jest and related testing libraries.
+2. #### Unit Tests for APIs:
+ 1. Write unit tests for the API endpoints related to "Movies" and "Genres".
+ 2. Cover scenarios such as creating, reading, updating, and deleting movies and genres.
+ 3. Include tests for error handling and validation of input data.
+3. #### Unit Tests for Movie Genre Search:
+ 1. Write unit tests for the movie genre search functionality.
+ 2. Test different genres and ensure that the API returns the expected results.
+ 3. Include edge cases and error scenarios in your tests.
+4. #### Coverage and Reporting:
+ 1. Aim for high code coverage in your tests to ensure thorough testing of your application.
+ 2. Generate and include a code coverage report as part of your test results.
+5. #### Documentation:
+ 1. Update your project's documentation to include information on running the tests using Jest.
+ 2. Provide clear instructions on how to run the tests and interpret the test results.
+
 ## Homework 3
 
-Assignment
+### Assignment
 Expanding a Node.js Application with TypeScript and MongoDB Database
 
-Objective
+### Objective
 Extend an existing Node.js application, converted to TypeScript, which uses Express.js, Swagger documentation, and runs via Nodemon. Update its API structure to include "Movies" and "Genres," and implement the ability to search for movies by genre using a MongoDB database.
 
-Requirements
-Connect to MongoDB Database:
-Set up MongoDB on your computer or use a cloud-based MongoDB service.
-Utilize the Mongoose library to establish a connection to the MongoDB database in your application.
-Creating an API for "Movies":
-Create API endpoints for "Movies" with CRUD operations (Create, Read, Update, Delete).
-Each movie should have the following fields:
-Title (String, required field)
-Description (String, required field)
-Release date (Date, required field)
-Genre (Array of Strings, required field)
-Creating an API for "Genres":
-Create API endpoints for "Genres" with CRUD operations (Create, Read, Update, Delete).
-Each genre should have the following field:
-Name (String, required field)
-Searching for Movies by Genre:
-Add a new API endpoint for searching movies by genre (e.g., /movies/genre/:genreName).
-Accept the genre as a request parameter and return a list of movies with the corresponding genre.
-Data Validation and Error Handling:
-Implement data validation for all incoming requests and error handling in your API.
-Ensure appropriate HTTP status codes and error messages.
-Updated Swagger Documentation:
-Expand the Swagger documentation to include the new APIs for "Movies" and "Genres," specifying available operations and providing examples of requests.
-Testing:
-Ensure that your application still functions correctly after updating the API structure, adding the MongoDB database, and enabling movie searches by genre.
-Use Nodemon for development and real-time testing.
+### Requirements
+1. #### Connect to MongoDB Database:
+ 1. Set up MongoDB on your computer or use a cloud-based MongoDB service.
+ 2. Utilize the Mongoose library to establish a connection to the MongoDB database in your application.
+2. #### Creating an API for "Movies":
+ 1. Create API endpoints for "Movies" with CRUD operations (Create, Read, Update, Delete).
+ 2. Each movie should have the following fields:
+  - Title (String, required field)
+  - Description (String, required field)
+  - Release date (Date, required field)
+  - Genre (Array of Strings, required field)
+3. #### Creating an API for "Genres":
+ 1. Create API endpoints for "Genres" with CRUD operations (Create, Read, Update, Delete).
+ 2. Each genre should have the following field:
+  - Name (String, required field)
+4. #### Searching for Movies by Genre:
+ 1. Add a new API endpoint for searching movies by genre (e.g., /movies/genre/:genreName).
+ 2. Accept the genre as a request parameter and return a list of movies with the corresponding genre.
+5. #### Data Validation and Error Handling:
+ 1. Implement data validation for all incoming requests and error handling in your API.
+ 2. Ensure appropriate HTTP status codes and error messages.
+6. #### Updated Swagger Documentation:
+ 1. Expand the Swagger documentation to include the new APIs for "Movies" and "Genres," specifying available operations and providing examples of requests.
+7. #### Testing:
+ 1. Ensure that your application still functions correctly after updating the API structure, adding the MongoDB database, and enabling movie searches by genre.
+ 2. Use Nodemon for development and real-time testing.
 
 
 
