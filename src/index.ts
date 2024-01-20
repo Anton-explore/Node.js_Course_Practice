@@ -1,24 +1,61 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import swaggerUi from 'swagger-ui-express'
-import swaggerJsdoc from 'swagger-jsdoc'
-import swaggerOptions from '../swaggerOptions.json'
+import express, { type Request, type RequestHandler, type Response, type NextFunction } from 'express';
+import mongoose from 'mongoose';
+import swaggerUi from 'swagger-ui-express';
+import swaggerJSDoc from 'swagger-jsdoc';
+import bodyParser from 'body-parser';
+import 'dotenv/config';
 
-import apiRoutes from './routes'
-import { errorHandler } from './middleware/error-handler/error-handler'
+import healthCheckRouter from './routes/health-check';
+import moviesRouter from './routes/movies';
+import genresRouter from './routes/genres';
 
-const app = express()
-// swagger
-const specs = swaggerJsdoc(swaggerOptions)
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs))
+const options = {
+  failOnErrors: true,
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Express API for JSONPlaceholder',
+      version: '1.0.0',
+    },
+  },
+  apis: ['./src/swagger-definitions.yaml', './src/routes/*.ts'],
+};
 
-// Body-parser
-app.use(bodyParser.json())
+const swaggerSpec = swaggerJSDoc(options);
 
-// App
-app.use('/api', apiRoutes)
+const app = express();
+const PORT = 3000;
 
-// Error handling middleware
-app.use(errorHandler)
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  }),
+);
 
-app.listen('3000', () => { console.log('Server is running on port 3000'); })
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+app.use('/health-check', healthCheckRouter);
+
+app.use('/movies', moviesRouter);
+app.use('/genres', genresRouter);
+
+app.use<RequestHandler>((_, res) => {
+  res.status(404).json({ error: 'Not Found' });
+});
+
+app.use((_err: Error, _req: Request, res: Response, _next: NextFunction) => {
+  res.status(500).json({ error: 'Internal Server Error' });
+});
+
+mongoose
+  .connect(`${process.env.MONGO_DB}`)
+  .then(() => {
+    console.log('Mongoose connected!');
+    app.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
